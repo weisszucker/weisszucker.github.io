@@ -32,6 +32,7 @@
 - 编译时：绝对代码
 - 加载时：可重定位的代码
 - 运行时：动态加载的代码
+  - 地址空间布局随机化 _(address space layout randomization, ASLR)_
 
 ### 字节序 _(Byte Order/Endianness)_
 
@@ -144,7 +145,7 @@
   - `ChildEBP` 上一个函数的 基地址 `ebp`（访问方式：`[ebp]`）
   - `RetAddr` 上一个函数的 返回地址，即下一个指令的 `eip`（访问方式：`[ebp+4]`）
   - 传入参数（访问方式：`[ebp+n], n >= 8`）
-- 基于 _Frame Pointer Omission (FPO)_ 的内存布局（低到高）
+- 基于 栈帧指针省略 _(frame pointer omission, FPO)_ 的内存布局（低到高）
   - 局部变量（访问方式：`[esp-x-n], n >= 4`）
   - `RetAddr` 上一个函数的 返回地址，即下一个指令的 `eip`（访问方式：`[esp-x]`）
   - 传入参数（访问方式：`[esp-x+n], x > n >= 4`）

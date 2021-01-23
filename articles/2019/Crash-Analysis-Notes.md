@@ -209,8 +209,6 @@
 - [利用 C++ 类对象的虚拟函数表指针在内存中搜索对象 - 张佩](https://blog.csdn.net/blog_index/article/details/7016696)
 - [从堆里寻找丢失的数据 - 张银奎](http://advdbg.org/blogs/advdbg_system/articles/3413.aspx)
 
-> Debugging is twice as hard as writing the code in the first place. —— Kernighan’s Law
-
 如果有什么问题，**欢迎交流**。😄
 
 Delivered under MIT License &copy; 2019, BOT Man
