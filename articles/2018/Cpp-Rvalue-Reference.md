@@ -23,14 +23,33 @@
 > [ES.56: Write `std::move()` only when you need to explicitly move an object to another scope](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Res-move)
 
 ``` cpp
-std::string base_url = tag->GetBaseUrl();
-if (!base_url.empty()) {
-  UpdateQueryUrl(std::move(base_url) + "&q=" + word_);
+if (!source.empty()) {
+  url += UrlEncode("&source=" + std::move(source));
 }
-LOG(INFO) << base_url;  // |base_url| may be moved-from
+LOG << url << " " << source;  // |source| may be moved-from
 ```
 
-上述代码的问题在于：使用 `std::move()` 移动局部变量 `base_url`，会导致后续代码不能使用该变量；如果使用，会出现 **未定义行为** _(undefined behavior)_（参考：[`std::basic_string(basic_string&&)`](https://en.cppreference.com/w/cpp/string/basic_string/basic_string)）。
+上述代码的问题在于：使用 `std::move()` 移动局部变量 `source`，会导致后续代码不能使用该变量；如果使用，会出现 **未定义行为** _(undefined behavior)_（参考：[`std::basic_string(basic_string&&)`](https://en.cppreference.com/w/cpp/string/basic_string/basic_string)）。
+
+如果把 `std::string` 换成 `std::unique_ptr`，则可能导致 **空指针崩溃**：
+
+``` cpp
+if (value.succeeded) {
+  std::unique_ptr<Payload> payload = std::move(value.payload);
+  // use local pointer |payload| here...
+}
+LOG << value.payload->x();  // |value.payload| may be null
+```
+
+对于不需要 **转移所有权** 的情况，应该改用 **裸指针引用**：
+
+``` cpp
+if (value.succeeded) {
+  Payload* payload = value.payload.get();
+  // use local pointer |payload| here...
+}
+LOG << value.payload->x();  // |value.payload| is not null
+```
 
 如何检查 **移动后使用** _(use after move)_：
 
