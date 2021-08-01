@@ -1,6 +1,6 @@
 # 如何比较两个浮点数
 
-> 2020/11/6 -> 2020/11/10
+> 2020/11/6 -> 2021/7/31
 > 
 > 夫自细视大者不尽，自大视细者不明。——《庄子·秋水》
 
@@ -217,6 +217,56 @@ assert(Equals(static_cast<float>(0.1), 0.1f) == true);
 
 ``` cpp
 assert(Equals(67329.234f, 67329.235f) == true);  // expect false
+```
+
+## 非正规数的比较
+
+需要注意，对于 32 位单精度浮点数，最小的 **正规数** _(normal number)_ 是 $2^{-126}$，而小于它的非 0 正浮点数都是 **非正规数** _(denormal number)_。
+
+例如，距离 0 最近的正浮点数（相差 `1 ULP`）就是非正规数，远小于 $2^{-126}$。代码上，可以借助 **类型双关** _(type punning)_ 构造这样的浮点数：
+
+``` cpp
+union A {
+  int i;
+  float f;
+};
+
+A a, b;
+a.i = 0;
+b.i = 1;
+assert(a.f != b.f);
+```
+
+由于在多数情况下，非正规数的 运算代价较高、使用场景较少，Intel SSE 支持通过 [`_mm_setcsr()`](https://en.wikipedia.org/wiki/Denormal_number#Intel_SSE) 设置 MXCSR 寄存器状态：
+
+- DAZ _(denormals-are-zero)_ 标记表示 运算输入的非正规数 认为等于 0
+- FTZ _(flush-to-zero)_ 标记表示 运算输出的非正规数 被替换成 0
+
+在启用非正规数优化后，前面例子里的 a 和 b 会认为相等（[在线演示](https://godbolt.org/z/5rGKa1ToP)）：
+
+``` cpp
+_mm_setcsr(_mm_getcsr() | 0x8040);  // optimization
+
+assert(a.f == b.f);  // treat equally because of DAZ
+```
+
+在 [Skia/Skottie 代码](https://github.com/google/skia/blob/62d42db2829d8f679afdb4fcfbbd7fc2948fea23/modules/skottie/src/animator/KeyframeAnimator.h#L39) 里，就有一处相关的问题：
+
+- 为了保证 `+0 == -0`，在比较了 union 里的 int 值之后，还会再比较 float 值
+- 如果开启了 DAZ 标记，就会把 `idx` 为 0 和 1 对应的 `flt` 视为相等，不符合原意
+
+``` cpp
+struct Value {
+  union {
+    uint32_t idx;
+    float    flt;
+  };
+
+  bool operator==(const Value& other) const {
+    return idx == other.idx
+        || flt == other.flt; // +/-0
+  }
+};
 ```
 
 ## 写在最后
