@@ -1037,6 +1037,10 @@ const Map foo_map = [] {
 
 [align-center]
 
+> ![Award](Conventional-Cpp/Tencent-Code-Standard-Award.jpg)
+
+[align-center]
+
 > [![xkcd: Standards](Conventional-Cpp/standards.png)](https://xkcd.com/927/)
 
 <br/>

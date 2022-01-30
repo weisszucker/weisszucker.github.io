@@ -3,9 +3,13 @@
 
 ## 代码 | Coding
 
+#### 2022
+
+- [C++ 项目 编译优化](2022/Cpp-Project-Compile-Optimization.md) 👍
+
 #### 2021
 
-- [一切皆可 调试](2021/Debug-Everywhere.md)
+- [一切皆可 调试](2021/Debug-Everywhere.md) 👍
 
 #### 2020
 
