@@ -346,7 +346,7 @@ clang++ -std=c++17 -g -fsanitize=address insane_iterator.cc && ./a.out
 > 当然，**不同系统** 的运行结果可能不同：
 > 
 > - Windows 上 clang 11 无论是否使用 ASan 编译，总是不会崩溃（都不符合预期）
-> - Linux 上 clang 11/13 无论是否使用 ASan 编译，都会出现崩溃（符合预期，并且 ASan 指出了内存破坏的位置）
+> - Linux 上 clang 11/13 无论是否使用 ASan 编译，都会出现崩溃（[符合预期，并且 ASan 指出了内存破坏的位置](https://godbolt.org/z/jYvWbMns4)）
 
 猜想原因是：原本内存破坏的位置，在被 ASan 隔开后，刚好落在合法的内存区域内，所以没有报错 —— **歪打正着** 😶。
 

@@ -1,6 +1,6 @@
 ﻿# 漫谈 C++ 的各种检查
 
-> 2019/9/20 -> 2020/11/4
+> 2019/9/20 -> 2022/4/21
 > 
 > What you don't use you don't pay for. (zero-overhead principle) —— Bjarne Stroustrup
 
@@ -46,18 +46,18 @@ C++ 语言本身有很多编译时检查（例如 类的成员访问控制 _(mem
 - [C.67: A polymorphic class should suppress copying](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rc-copy-virtual)
 - [C.130: For making deep copies of polymorphic classes prefer a virtual clone function instead of copy construction/assignment](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rh-copy)
 
-为此，Chromium 提供了两个 [常用的宏](https://github.com/chromium/chromium/blob/master/base/macros.h)（通过构造函数的 `= delete` 实现）：
+为此，Chromium 提供了两个 [常用的宏](https://github.com/chromium/chromium/blob/787d24c16297c33a95448fc00d7e1a79f3aec2cf/base/macros.h#L25)（通过构造函数的 `= delete` 实现）：
 
 - `DISALLOW_COPY_AND_ASSIGN` 用于禁用类的 拷贝构造函数 和 拷贝赋值函数
 - `DISALLOW_IMPLICIT_CONSTRUCTORS` 用于禁用类的 默认构造函数 和 拷贝行为
 
-由于 Chromium 大量使用了 C++ 的多态特性，这些宏随处可见。但这两个宏 [不建议再使用](https://github.com/chromium/chromium/blob/master/styleguide/c++/c++-dos-and-donts.md#explicitly-declare-class-copyabilitymovability)，而应该考虑可移动（上述宏默认禁用移动）。
+由于 Chromium 大量使用了 C++ 的多态特性，这些宏随处可见。但这两个宏 [不建议再使用](https://github.com/chromium/chromium/blob/787d24c16297c33a95448fc00d7e1a79f3aec2cf/styleguide/c++/c++-dos-and-donts.md#explicitly-declare-class-copyabilitymovability)，而应该考虑可移动（上述宏默认禁用移动）。
 
 ### 遗忘返回值检查
 
 对于一些 C 风格的接口，常用 **输出参数** _(output parameter)_（[通过指针或引用实现，但不建议使用](../2020/Conventional-Cpp.md#Parameters-and-Arguments)）返回调用结果，再用 `bool`/`int` 等返回值表示 调用是否成功。所以，一般需要 通过返回值判断 调用是否成功。
 
-例如，[`abseil`](https://github.com/abseil/abseil-cpp) 提供的 字符串解析数值接口 [`bool absl::SimpleAtoi(str, out)`](https://github.com/abseil/abseil-cpp/blob/master/absl/strings/numbers.h) 返回值被标记为 [`ABSL_MUST_USE_RESULT`](https://github.com/abseil/abseil-cpp/blob/8f1c34a77a2ba04512b7f9cbc6013d405e6a0b31/absl/base/attributes.h)：
+例如，[`abseil`](https://github.com/abseil/abseil-cpp) 提供的 字符串解析数值接口 [`bool absl::SimpleAtoi(str, out)`](https://github.com/abseil/abseil-cpp/blob/8f1c34a77a2ba04512b7f9cbc6013d405e6a0b31/absl/strings/numbers.h#L66) 返回值被标记为 [`ABSL_MUST_USE_RESULT`](https://github.com/abseil/abseil-cpp/blob/8f1c34a77a2ba04512b7f9cbc6013d405e6a0b31/absl/base/attributes.h#L427)：
 
 - 如果解析出错，函数返回 `false`，但 `out` 参数进入 **未定义状态** _(unspecified state)_（可能被修改，不再是初始值）
 - 在这种情况下，如果返回值被遗忘，编译器会提示 **警告** _(warning)_（但不是 错误），避免使用者出现 **逻辑错误**：
@@ -78,7 +78,43 @@ if (absl::SimpleAtoi(str, &val) && val != 0) { /* safe */ }
 - 分配资源（如果 `new T()` 的返回值被遗忘，可能导致 内存泄漏）
 - 不修改状态的函数（一般返回非 `void` 类型；例如，单独调用 `const` 成员函数 `std::vector<>::emtpy()` 是没有意义的，大概率是代码不小心写错了）
 
-由于 Chromium 暂不支持 C++ 17 的 [`[[nodiscard]]`](https://en.cppreference.com/w/cpp/language/attributes/nodiscard) 属性，[`WARN_UNUSED_RESULT`](https://github.com/chromium/chromium/blob/master/base/compiler_specific.h) 目前使用 **编译器扩展** 实现。
+由于 Chromium 暂不支持 C++ 17 的 [`[[nodiscard]]`](https://en.cppreference.com/w/cpp/language/attributes/nodiscard) 属性，[`WARN_UNUSED_RESULT`](https://github.com/chromium/chromium/blob/fd8a8914ca0183f0add65ae55f04e287543c7d4a/base/compiler_specific.h#L117) 宏目前使用 **编译器扩展** [`__attribute__((warn_unused_result))`](https://clang.llvm.org/docs/AttributeReference.html#nodiscard-warn-unused-result) 实现。
+
+### `switch` 语句检查
+
+在使用 `switch` 语句时，很容易忘记使用 `break` 跳出对应的 `case` 分支，从而导致代码错误的往下继续执行。
+
+为此，clang 提供了 [`-Wimplicit-fallthrough`](https://clang.llvm.org/docs/DiagnosticsReference.html#wimplicit-fallthrough) 检查，并允许通过 [`[[clang::fallthrough]]`](https://clang.llvm.org/docs/AttributeReference.html#fallthrough) 属性标记允许从当前 `case` 分支进入下一个 `case`/`default` 分支（在 Chromium 中对应 [`FALLTHROUGH`](https://github.com/chromium/chromium/blob/fd8a8914ca0183f0add65ae55f04e287543c7d4a/base/compiler_specific.h#L244) 宏）：
+
+``` cpp
+switch (x) {
+  case 0:
+    // Do something...
+    // warning: unannotated fall-through between switch labels.
+  case 1:
+    // Do something...
+    [[clang::fallthrough]];  // OK
+  case 2:
+    // Do something...
+    break;                   // OK
+}
+```
+
+另外，当使用 `switch` 语句选择 `enum` 枚举类型时，如果新增了一个枚举值定义，而 `switch` 语句并没有对应的 `case` 分支（或 `default` 分支）处理，很容易导致逻辑错误。
+
+为此，clang 提供了 [`-Wswitch`](https://clang.llvm.org/docs/DiagnosticsReference.html#wswitch) 检查（默认开启）：
+
+``` cpp
+  enum class Type { kT1, kT2 };
+  switch (t) {
+    case Type::kT1:
+      // Do something...
+      break;
+    // warning: enumeration value 'kT2' not handled in switch.
+  }
+```
+
+> 上述两段代码 [在线演示](https://godbolt.org/z/Mfhjo964W) 👈👈👈
 
 ### 参数类型检查
 

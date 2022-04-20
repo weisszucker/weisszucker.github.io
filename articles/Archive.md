@@ -5,6 +5,7 @@
 
 #### 2022
 
+- [C++ 一个偶现的内存破坏](2022/Cpp-Memory-Occasionally-Corruption.md)
 - [C++ 项目 编译优化](2022/Cpp-Project-Compile-Optimization.md) 👍
 
 #### 2021
