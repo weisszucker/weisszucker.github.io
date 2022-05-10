@@ -151,5 +151,6 @@
 
 - [搜集的哲言](misc/Quotes.md) 👍
 - [读过的书](misc/Books-Read.md)
+- [我的自行车](misc/Bikes.md)
 - [装机必备](misc/Softwares-Must-Have.md)
 - [二维码生成器](misc/QR-Code-Generator.md)
