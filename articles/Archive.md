@@ -10,6 +10,7 @@
 
 #### 2021
 
+- [一次 Chromium 性能优化 的“撞车”事故经历](2021/Chromium-Floating-Number-Crash.md)
 - [一切皆可 调试](2021/Debug-Everywhere.md) 👍
 
 #### 2020
