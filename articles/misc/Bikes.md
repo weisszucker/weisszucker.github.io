@@ -1,10 +1,10 @@
 # 我的自行车
 
-> ¥13292.89
+> ¥13482.59
 
 ## GIANT ATX 830
 
-> ¥4022.58
+> ¥4062.58
 
 - [ATX 830 自行车 (S)](https://item.jd.com/10022275555172.html) ¥2498（捷安特农大店，送 脚撑、水壶架）
 - [RBRL 挡泥板 (RL-870)](https://item.jd.com/2554508.html) ¥100（捷安特农大店）
@@ -19,6 +19,7 @@
 - [KMC Z9 链条](https://item.jd.com/10027606352360.html) ¥85（京东，送打链器、快扣扳手、链条油）
 - [Prowheel 24-34-42T 牙盘 (AD43)](https://www.amazon.com/Prowheel-mountain-24-34-42T-aluminum-universal/dp/B0719FN2PS) ¥158（捷安特回龙观店，质量较差）
 - 杂牌脚撑 ¥78（捷安特回龙观店，质量极差）
+- 杂牌碟刹刹车片 ¥40（捷安特回龙观店，刹车力极差）
 - [GIANT 内胎 (27.5X1.9/2.125 FV 48mm)](https://item.jd.com/11780040546.html) ¥40（捷安特北土城西路店）
 - [正新 内胎 (27.5X1.9/2.125 FV 48mm)](https://item.jd.com/100016810965.html) ¥35（捷安特北四环中路店，不带换）
 - [Shimano 44-32-22T 牙盘 (FC-MT210-3) + 中轴 (BB-MT500)](https://bike.shimano.com/zh-CN/product/component/alivio-m3100/FC-MT210-3.html) ¥500（捷安特沙河店）
@@ -41,7 +42,7 @@
 - [XOSS X1 踏频器](https://item.jd.com/22699399630.html) ¥79（京东）
 - [Rhinowalk 尾包 (T603S)](https://item.jd.com/100034680388.html) ¥18（拼多多）
 - [TOOPRE 自行车维修工具](https://detail.tmall.com/item.htm?id=654638416955) ¥21（淘宝）
-- [DECATHLON 法式气嘴内胎 (700X23/32 60MM)](https://www.decathlon.com.cn/zh/p/700x23-32-60-mm-presta-valve-inner-tube/_/R-p-306878) ¥19.9 + ¥19.9（迪卡侬，同事用掉一条）
+- [DECATHLON 法式气嘴内胎 (700X23/32 60MM)](https://www.decathlon.com.cn/zh/p/700x23-32-60-mm-presta-valve-inner-tube/_/R-p-306878) ¥19.9 + ¥19.9（迪卡侬，同事用掉一条 & 放包里破了一条）
 - [BTWIN 920 压力表伸缩式打气筒](https://www.decathlon.com.cn/zh/p/920-telescopic-hand-pump-with-pressure-gauge/_/R-p-145782) ¥119.9（迪卡侬）
 - [VAN RYSEL FASTFLOW 骑行水壶 (XL 950 ML)](https://www.decathlon.com.cn/zh/p/950-ml-xl-cycling-water-bottle-fastflow/_/R-p-329246) ¥59.9（迪卡侬）
 - 杂牌水壶架 ¥3.89（拼多多）
@@ -52,12 +53,13 @@
 
 ## Riverside 100
 
-> ¥1093.93
+> ¥1243.63
 
 - [RIVERSIDE 100 自行车 (S)](https://www.decathlon.com.cn/zh/p/hyc-100-riv-cn-matt/_/R-p-145690) ¥889.9（迪卡侬，微信支付 899 减 110）
 - [BTWIN 100 撑脚架](https://www.decathlon.com.cn/zh/p/kickstand-100/_/R-p-331631) ¥49.9（迪卡侬）
-- [BTWIN 100 挡泥板套件 700C](https://www.decathlon.com.cn/zh/p/mudguard-set-100-700c/_/R-p-184491) ¥59.9（迪卡侬）
-- [ELOPS 100 24-28寸 自行车车篮架](https://www.decathlon.com.cn/zh/p/100-24-28-bike-pannier-rack/_/R-p-187311) ¥69.9（迪卡侬）
+- [BTWIN 100 挡泥板套件 700C](https://www.decathlon.com.cn/zh/p/mudguard-set-100-700c/_/R-p-184491) ¥59.9 + ¥59.9（迪卡侬）
+- [ELOPS 100 24-28寸 自行车车篮架](https://www.decathlon.com.cn/zh/p/100-24-28-bike-pannier-rack/_/R-p-187311) ¥69.9 + ¥69.9（迪卡侬）
+- [DECATHLON 美式气嘴内胎 (700X35/45 48MM)](https://www.decathlon.com.cn/zh/p/700x23-32-60-mm-presta-valve-inner-tube/_/R-p-306878) ¥19.9（迪卡侬，小哥顺便帮忙换了辐条）
 - 杂牌车框 ¥16.53（拼多多）
 - 杂牌车铃 ¥7.8（拼多多）
 

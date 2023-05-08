@@ -235,7 +235,7 @@ nav a:active {
 
 @media print {
     .markdown-slide {
-        page-break-before: always;
+        break-before: column;
     }
 
         .markdown-slide h1 {
@@ -275,7 +275,7 @@ nav a:active {
 
 @media print {
     .page-break {
-        page-break-after: always;
+        break-after: column;
     }
 
     .not-print + * {

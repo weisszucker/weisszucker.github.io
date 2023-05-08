@@ -96,6 +96,20 @@ TODO: shared_ptr
 - 放在 header 里，会导致 `incomplete type` 问题
 - 如果继承了 `std::enable_shared_from_this`，必须要使用至少一个 `std::shared_ptr` 来装载原始对象；否则调用 `shared_from_this()` 方法时，会抛出 `std::bad_weak_ptr` 异常
 
+## Chromium 线程模型
+
+为什么：
+
+- The main goal is to keep the main thread (a.k.a. “UI” thread in the browser process) and IO thread (each process‘s thread for receiving IPC) responsive.
+
+怎么做：
+
+- This means offloading any blocking I/O or other expensive operations to other threads.
+- Our approach is to use message passing as the way of communicating between threads.
+- We discourage locking and thread-safe objects. Instead, objects live on only one (often virtual -- we’ll get to that later!) thread and we pass messages between those threads for communication. 
+
+另外，[Chromium的无锁线程模型示例之PostTask](https://bingoli.github.io/2020/01/27/chromium_thread_model_post_task/)
+
 TODO:
 
 - 多线程回调

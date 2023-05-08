@@ -10,36 +10,26 @@
 
 ## 工作
 
-### 2018.7 - 至今 | 腾讯
+### 2020.11 - 至今 | 字节跳动
 
-- 影响力：腾讯 **C++ 代码规范** 小组 **核心成员**
-- 绩效：曾获 **5 星** (2019 H1) / **4 星** (2018 H2)
-- 奖项：曾获 **腾讯知识奖**（[技术类文章](../2019/Inside-Cpp-Callback.md)）
+- 参与飞书桌面端（Windows/macOS/Linux，基于 [Chromium](https://www.chromium.org) + Web 的 Hybrid 架构）功能开发、Code Review、品质保障，培养 6 名校招/实习生
+- PC 性能&品质 负责人：
+  - **整体关注** 稳定性（崩溃+OOM+卡顿+卡死+兼容性）/资源（CPU+内存+磁盘/包体积+IO）/成本（流量+存储）/体验（耗时）等方向在 开发/测试/灰度/线上（基建+指标+告警+工具）等阶段的品质保障工作（研发参与人数 10+）
+  - 重点降低 Windows **OOM 率** 30%，macOS **卡顿率** 70%，**主进程内存** pct99 20%
+- 视频会议 Native 改造项目 框架负责人：
+  - 从 Web 架构改造为基于 Chromium 的 Native 架构，提升启动速度、降低CPU&内存占用及耗电量、减小安装包体积、支持更复杂的原生软件场景（研发参与人数 60+，历时 7 个月）
+  - 提供 Chromium 技术支持（进程架构、基础能力），构建 UI 基础组件库，解决阻塞性难题（系统兼容、Chromium 底层）
+  - 保障项目品质（崩溃/ASAN、卡顿、内存），优化工程效率（仓库解耦、[编译优化](../2022/Cpp-Project-Compile-Optimization.md)）
 
-#### 2019.11 - 至今 | 腾讯 智能平台 NLP
+### 2018.7 - 2020.11 | 腾讯
 
-- **C++/Python 后台开发**，基于 [Tars](https://github.com/TarsCloud/TarsCpp) 开发后台服务
-- 开发 **教育 AI 服务**，从零到一开发 自适应推荐、学情画像 等功能，接入 链路跟踪、远程日志、指标监控，基于 gperftools 分析性能、优化瓶颈
-- 优化 **NLP 模型训练服务**，改造并行调用，完善告警
-- 参与 **开源协同**，建设部门内 C++/Python 基础库，共建公司级 Python RPC 框架
-- 提升 **研发效率**，推动部门内 单元测试、代码静态扫描、持续集成 建设和优化
-
-#### 2018.7 - 2019.10 | 腾讯 QQ 浏览器
-
-- **C++ 客户端开发**，基于 [Chromium](https://www.chromium.org) 开发 PC 浏览器
-- 设计 **基于 XAML 原生渲染方案**，实现导航页秒开，50% 用户首屏提速 5s 以上，提高 15% 收入
-- 降低 **UI 崩溃率** 40%~50%，使用 WinDbg 分析线上 dump，加入 [静态/动态检查](../2019/Cpp-Check.md)，减少安全隐患
-- 开发 [Tencent/Hippy](https://github.com/Tencent/Hippy) **移动跨平台框架**，重构线程模型、日志模块，规范 C++ 代码，优化 JNI 调试
-- 封装 **JavaScript 通用扩展接口**，提供内部 SDK，提升可扩展性，降低运营开发成本
-
-#### 2017.7 - 2018.7 | 腾讯 QQ 浏览器（实习）
-
-- Node.js/C++ 后台开发
-  - 开发 **欢迎页运营** 服务、**导航页抓取** 服务
-  - 重构 **A/B Test 任务灰度下发** 模块
-- C++/Win32 客户端开发
-  - 开发 **QQ Mini 浏览器书签** 功能，负责部分业务需求的日常开发工作
-  - 开发 浏览器团队 **C++ 规范检查** 工具
+- QQ 浏览器桌面端（基于 C++/[Chromium](https://www.chromium.org)）：
+  - 设计 **基于 XAML 的导航页原生渲染方案**，50% 用户首屏加载提速 5s 以上，增加 15% 收入
+  - 降低 **崩溃率** 40%~50%，借助 WinDbg 分析线上 dump，加入 [静态/动态检查](../2019/Cpp-Check.md)，减少安全隐患
+  - 封装 JavaScript 通用扩展接口，降低运营活动开发成本，提升可扩展性
+- 智能平台服务端（基于 C++/Python/[Tars](https://github.com/TarsCloud/TarsCpp)）：
+  - 开发教育 AI 服务，从零到一开发自适应推荐、用户画像等功能，建设 C++/Python 基础库，接入全链路跟踪、远程日志、指标监控，基于 gperftools 优化性能瓶颈
+  - 担任公司 C++ 代码规范小组核心成员，建设部门单元测试、代码静态扫描、持续集成
 
 [page-break]
 
@@ -60,11 +50,12 @@
 - **技术博客**：https://bot-man-jl.github.io/articles
 - 熟练 ⭐⭐⭐
   - **现代** C++ 11/14/17
+  - Chromium 跨平台（C++）
   - Windows 桌面软件（C++）
-  - Linux 后台服务（C++/Python）
 - 熟悉 ⭐⭐
+  - Web 前端小程序（JavaScript）
+  - Linux 后台服务（C++/Python）
   - Node.js 后台服务（JavaScript）
-  - Web 前端/微信小程序（JavaScript）
   - CLI 脚本（JavaScript/Python/Bash/BAT）
 - 掌握 ⭐
   - Windows WFP 网络驱动（C）
@@ -73,15 +64,18 @@
 
 ## 开源
 
+- 2019 - 参与 [Tencent/Hippy](https://github.com/Tencent/Hippy) 移动跨平台框架开发，负责早期的线程模型/日志模块重构、优化 JNI 调试
 - 2018 - 设计 **反流量嗅探** 的 [Windows 流量重定向驱动](https://github.com/BOT-Man-JL/WFP-Traffic-Redirection-Driver)，可以用于匿名通信
-- 2017 - 参与 [Visual Studio Markdown 编辑器](https://github.com/madskristensen/MarkdownEditor) 项目
 - 2016 - 使用 **现代 C++** 设计 **强类型、编译时** [对象关系映射 (ORM)](https://github.com/BOT-Man-JL/ORM-Lite)（[中文介绍](../2016/How-to-Design-a-Better-Cpp-ORM.md)）
-- 2015 – 设计 **轻量、跨平台** [C++ 图形库](https://github.com/BOT-Man-JL/EggAche-GL)
 
 <script>
 var two_column_style = '&style=two-column';
 if (document.location.search.indexOf('style') == -1)
   document.location += two_column_style;
+
+var cvStyleElem = document.createElement('style');
+cvStyleElem.innerHTML += '@media print { header { margin-bottom: 0; } }';
+document.head.appendChild(cvStyleElem);
 
 if (qrCodeSVG)
   document.getElementById('cvQrCodeSec').innerHTML = qrCodeSVG(location.href.replace(two_column_style, ''), 360);

@@ -92,6 +92,16 @@
 
 ## 笔记 | Notes
 
+#### 2023
+
+- [如何指导新同事](2023/Mentoring.md)
+- [客户沟通要点](2023/Outside-Communication.md)
+
+#### 2021
+
+- [Chromium UI 基础](2021/Chromium-UI-Intro.md)
+- [C++ Code Review 关注点](2021/Cpp-Code-Review-Notes.md)
+
 #### 2020
 
 - [Preshing Blog Notes](2020/Preshing-Blog-Notes.md)
@@ -117,6 +127,10 @@
   - [Behavioral Patterns](2017/Design-Patterns-Notes-3.md)
 
 ## 生活 | Life
+
+#### 2023
+
+- [印尼马来之旅](2023/Indonesia-Malaysia-Trip.md)
 
 #### 2019
 
