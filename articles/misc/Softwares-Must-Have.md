@@ -4,12 +4,11 @@
 
 - Everyday
   - IIS -> bot-man-jl.github.io
-  - https://www.7-zip.org/
-  - https://www.sumatrapdfreader.org/
   - https://www.google.com/intl/zh-CN_ALL/chrome/
-  - [opt] https://office.qq.com/
-  - [opt] https://www.office.com/
-  - [opt] Sony Vegas `vegaspro13.0.428`
+  - https://www.7-zip.org/
+  - https://winmerge.org/
+  - https://www.jam-software.com/treesize_free
+  - [opt] https://www.sumatrapdfreader.org/
 - Devtools
   - https://docs.microsoft.com/en-us/windows/wsl/install-win10
   - http://releases.llvm.org/download.html
@@ -29,5 +28,4 @@
 - Sysinternals Tools -> %SystemRoot%
   - https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
   - https://docs.microsoft.com/en-us/sysinternals/downloads/procmon
-  - https://docs.microsoft.com/en-us/sysinternals/downloads/debugview
 - [opt] https://github.com/googlehosts/hosts
