@@ -1,10 +1,10 @@
 # 我的自行车
 
-> ¥18912.77
+> ¥19157.94
 
 ## GIANT ATX 830
 
-> ¥4090.58
+> ¥4292.58
 
 - [ATX 830 自行车 (S)](https://item.jd.com/10022275555172.html) ¥2498（捷安特农大店，送 脚撑、水壶架）
 - [RBRL 挡泥板 (RL-870)](https://item.jd.com/2554508.html) ¥100（捷安特农大店）
@@ -16,7 +16,9 @@
 - [玥玛 U 型锁 (750E-7625A)](https://detail.tmall.com/item.htm?id=41660251902&skuId=4091447150490) ¥48.5（淘宝，送同事）
 - [ELOPS U 型锁 100 固定底座](https://www.decathlon.com.cn/zh/p/utk-100-u-lock-adaptor/_/R-p-326824) ¥14.9（迪卡侬，开裂）
 - [KMC Z9 链条](https://www.kmcchain.com/en/product/bicycle-chain-z9-9-speed) ¥100（捷安特回龙观店）
-- [KMC Z9 链条](https://item.jd.com/10027606352360.html) ¥85（京东，送打链器、快扣扳手、链条油）
+- [KMC Z9 链条](https://item.jd.com/10027606352360.html) ¥85（京东，送截链器、链条油、快扣扳手）
+- [KMC X9 链条](https://www.kmcchain.com/en/product/bicycle-chain-x9-9-speed) ¥97（拼多多，送截链器、链条油）
+- [Shimano 11-32T 飞轮 (HG201-9)](https://bike.shimano.com/zh-CN/product/component/altus-m2000/CS-HG201-9.html) ¥105（拼多多）
 - [Prowheel 24-34-42T 牙盘 (AD43)](https://www.amazon.com/Prowheel-mountain-24-34-42T-aluminum-universal/dp/B0719FN2PS) ¥158（捷安特回龙观店，质量较差）
 - 杂牌脚撑 ¥78（捷安特回龙观店，质量极差）
 - 杂牌碟刹刹车片 ¥40（捷安特回龙观店，刹车力极差）
@@ -104,7 +106,7 @@
 
 ## 工具
 
-> ¥155.95
+> ¥199.12
 
 - [巨木 无线数显充气泵 (JM-88172)](https://item.jd.com/100020481122.html) ¥0（工会）
 - [RIVERSIDE 法式/美式气嘴连接软管](https://www.decathlon.com.cn/zh/p/connection-hose-and-valve-adaptors/_/R-p-306762) ¥12.9（迪卡侬）
@@ -114,6 +116,9 @@
 - [WD-40 防锈润滑剂 (200ml)](https://item.jd.com/100015315809.html) ¥34.6（拼多多）
 - [TOOPRE 撬胎棒 (3) + TOOPRE 补胎片 (8)](https://item.jd.com/10026108174435.html) ¥15.8（拼多多，发错成 6 片美利达补胎片）
 - [TOOPRE 链条尺](https://item.jd.com/10026616514769.html) ¥8.8（拼多多）
+- [TOOPRE 飞轮/中轴/锁环 三合一扳手](https://item.jd.com/10085458968027.html) ¥20.25（拼多多）
+- [TOOPRE 卡式飞轮套筒](https://item.jd.com/61706485897.html) ¥9.4（拼多多）
 - [DELI 内六角扳手球头 9 件套 (DL232109H)](https://item.jd.com/100013546001.html) ¥9.81（拼多多）
 - [DELI 尖嘴钳 5 寸 (DL20026)](https://item.jd.com/5821581.html) ¥6.63（拼多多）
+- [DELI 活动扳手 8 寸 (DL008A)](https://item.jd.com/7434946.html) ¥13.52（拼多多）
 - 杂牌扎带 1.8mm 20cm (x250) ¥3.71（拼多多）

@@ -5,7 +5,8 @@
 
 #### 2023
 
-- [桌面客户端 品质保障](2023/PC-App-Usability-Assurance.md)
+- [Javascript 异步调用模型](2023/JS-Async-Model.md)
+- [桌面客户端 品质保障](2023/PC-App-Usability-Assurance.md) 👍
 
 #### 2022
 
