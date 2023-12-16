@@ -1,12 +1,12 @@
 # 桌面客户端品质保障
 
-> 2023/8/23
+> 2023/8/23 -> 2023/12/3
 > 
 > 体系建设、方法复用、流程闭环。
 
 ## 概览
 
-> 本文针对 Windows、macOS 客户端，包括 C++、JS (JavaScript) 技术。
+> 本文针对 Windows、macOS 客户端，包括 C++、JS (JavaScript) 程序。
 
 ### 关注方向
 
@@ -44,6 +44,13 @@
 - 在 CI (Conitnuous Intergration) 阶段执行 静态代码扫描（例如 clang-tidy、jslint），并加入自定义规则（例如 全局变量初始化时依赖其他全局变量崩溃、JS 代码检查 remove listener 是否遗漏）
 - 沉淀问题经验，定期向业务团队普及，并尝试补充到 防御性编程检查、Code Review Checklist、静态代码扫描规则 里
 
+通用归因维度：
+
+- 设备画像（系统、CPU、内存、GPU、磁盘、屏幕、网络）
+- 程序版本
+- 发生时间
+- 功能开关、用户操作
+
 日志分析工具：
 
 - 日志可视化工具，按照时间轴展示 关键事件（例如 进程/页面生命周期、崩溃/卡顿）、资源占用
@@ -57,6 +64,8 @@
 
 - 崩溃时生成 dump（例如使用 crashpad）
 - 根据调用栈聚合上报的 dump，进行初步归因（后续可再根据实际原因，进行二次聚合）
+- 针对 JS 代码，捕获 uncaughtException、unhandledRejection 事件，上报调用栈再结合 source map 解析
+- 非核心进程崩溃后自动拉起
 
 指标：
 
@@ -101,6 +110,7 @@
 - 同理可监控其他不允许阻塞的线程（例如 IPC 线程、第三方库主线程）
 - 针对 JS 代码，使用 jank 事件判断卡顿，并抓取调用栈
 - 根据调用栈聚合上报的 dump/(JS jank)，进行初步归因（后续可再根据实际原因，进行二次聚合）
+- 非核心进程卡死后自动重启
 
 指标：
 
@@ -145,6 +155,7 @@
 基建：
 
 - 定时记录线程 CPU Ticks（计算进程的求和即可），计算单位时间内的 CPU 使用率（如果是非常驻进程，启动后采集一次，退出时采集一次）
+- 定时采集系统整体 CPU 使用率
 - 管控长时间高 CPU 使用的 JS 逻辑（如果拆分独立进程，则结束对应 renderer 进程）
 
 指标：
@@ -170,7 +181,7 @@
 - 定时采集进程内存大小（如果是非常驻进程，启动后采集一次）
   - Windows: private working set（物理内存）、private bytes（虚拟内存）
   - macOS: physical footprint（虚拟内存）
-- 定时采集系统内存使用情况
+- 定时采集系统整体内存使用情况
   - Windows: physical memory（物理内存）、commit charge (limit/total)（虚拟内存，参考：[Windows says RAM ran out while there is still 4 GB of physical memory available](https://superuser.com/questions/943175/windows-says-ram-ran-out-while-there-is-still-4-gb-of-physical-memory-available/943185#943185)）
   - macOS: memory pressure（物理内存）、memory used（物理内存）
 - 定时采集 JS heap 大小
@@ -264,6 +275,16 @@
 - 但暂未详细调研，此处留空
 
 ## 其他方向
+
+### 设备画像
+
+- 系统（版本）
+- CPU（型号关联 [CPU 性能天梯图](https://www.chaynikam.info/en/cpu_table.html) 获取跑分/主频/超频/核心数/线程数）
+- 内存（大小）
+- GPU（所有 & 实际使用、型号关联 [GPU 性能天梯图](https://www.chaynikam.info/en/gpu_specif.html) 获取跑分/主频）
+- 磁盘（所有 & 安装目录/缓存目录、总容量 & 剩余容量、HDD | SSD）
+- 屏幕（个数、分辨率、DPI、刷新率）
+- 网络（延迟、网速）
 
 ### Oncall
 

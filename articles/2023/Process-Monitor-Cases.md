@@ -1,6 +1,6 @@
 # Process Monitor 故事汇
 
-> 2022/11/14
+> 2023/10/29
 > 
 > 汇总借助 Process Monitor 分析的典型案例（持续更新中）
 
@@ -77,7 +77,7 @@ DEL [/P] [/F] [/S] [/Q] [/A[[:]attributes]] names
 
 查看这个驱动程序的信息，发现他是 TEC Solutions Limited. 公司的杰作：
 
-![Renamed-File-Stack](Process-Monitor-Cases/Renamed-File-Stack.png)
+![Renamed-File-Module](Process-Monitor-Cases/Renamed-File-Module.png)
 
 在网上搜了一下，这个模块属于 [IP-guard 安全软件](http://www.ip-guard.net/en/about.html)：
 
@@ -89,4 +89,50 @@ DEL [/P] [/F] [/S] [/Q] [/A[[:]attributes]] names
 
 监控特定进程，排查可疑行为。
 
-TODO
+### 案例：重命名失败
+
+**现象**
+
+执行某开源软件的 build 命令时提示 `Unable to rename temporary file` 从而导致失败：
+
+![Name-Collision](Process-Monitor-Cases/Name-Collision.png)
+
+反复重试后仍然无效，需要找到重命名失败的原因，才能解决问题。
+
+**分析**
+
+由于该软件在 build 时会启动多个子进程，我们可以借助 [Process Explorer](https://en.wikipedia.org/wiki/Process_Explorer)（[下载链接](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer)）定位到是哪个进程出错的：
+
+![Name-Collision-Procexp](Process-Monitor-Cases/Name-Collision-Procexp.png)
+
+接着使用 Process Monitor 监控可疑进程 `java.exe` 的文件 I/O 行为，发现该进程结束前有一处从 `xxx.apk.apktool_tmp` 到 `xxx.apk` 的重命名失败操作：
+
+![Name-Collision-Events](Process-Monitor-Cases/Name-Collision-Events.png)
+
+最后，手动删除 `xxx.apk.apktool_tmp` 后重试即可恢复。
+
+### 案例：DLL 依赖缺失
+
+**现象**
+
+运行某开源软件后闪退，查看报错日志发现是依赖的 DLL 模块加载失败导致的：
+
+![Missing-DLL](Process-Monitor-Cases/Missing-DLL.png)
+
+**分析**
+
+使用 Process Monitor 监控对应进程的文件 I/O 行为，发现该进程加载出错前 `MSVCP140D.dll` 文件一直找不到：
+
+![Missing-DLL-Events](Process-Monitor-Cases/Missing-DLL-Events.png)
+
+在网上搜了一下，这个模块是 MSVC 调试版的一部分。最后，重新下载了软件的发行版，就可以正确运行了。
+
+另外，可以使用 [Dependency Walker](https://www.dependencywalker.com/)（或重制版 [Dependencies](https://github.com/lucasg/Dependencies)）看到依赖的 DLL 能否正确加载：
+
+![Missing-DLL-Dependencies](Process-Monitor-Cases/Missing-DLL-Dependencies.png)
+
+## 写在最后
+
+如果有什么问题，**欢迎交流**。😄
+
+Delivered under MIT License &copy; 2023, BOT Man

@@ -1,6 +1,6 @@
 # 我的自行车
 
-> ¥19157.94
+> ¥19286.59
 
 ## GIANT ATX 830
 
@@ -87,7 +87,7 @@
 
 ## 人身装备
 
-> ¥2055.9
+> ¥2073.65
 
 - 美利达贴牌头盔 ¥0（前同事送的，现已送给同事）
 - [Gub K80 Plus 红色风镜头盔 (L 58-62) + 灰色/黄色镜片](https://detail.tmall.com/item.htm?id=538082051256&skuId=3220263769317) ¥133.2（淘宝）
@@ -96,19 +96,21 @@
 - [WEDZE FIRSTHEAT 成人滑雪保暖帽](https://www.decathlon.com.cn/zh/p/adult-firstheat-skiing-hat-black/_/R-p-165131) ¥14.9（迪卡侬）
 - [TARMAK PREVENT 100 护膝 (size-3)](https://www.decathlon.com.cn/zh/p/right-left-men-s-women-s-knee-brace-prevent-100/_/R-p-327293) ¥29.9 + ¥29.9（迪卡侬，一对）
 - [TRIBAN 900 冬款骑行运动手套 (S)](https://www.decathlon.com.cn/zh/p/900-cycling-winter-gloves-neon/_/R-p-305623) ¥149.9（迪卡侬）
-- [QUECHUA MH500 防水夹克冲锋衣 (S)](https://www.decathlon.com.cn/product-detail?dsm_code=340642&model_code=8758909) ¥599.9（迪卡侬）
+- [QUECHUA MH500 防水夹克冲锋衣 (S)](https://www.decathlon.com.cn/product-detail?dsm_code=340642&model_code=8758909) ¥599.9（迪卡侬，环海南掉落）
 - [TRIBAN RC100 无背带骑行短裤 (M)](https://www.decathlon.com.cn/zh/p/rc100-bibless-sport-cycling-shorts/_/R-p-119939) ¥99.9（迪卡侬）
 - [TRIBAN RC500 男式冬季骑行夹克 (S)](https://www.decathlon.com.cn/zh/p/men-s-cycling-winter-jacket-rc500/_/R-p-304796) ¥399.9（迪卡侬）
 - [VAN RYSEL RACER 公路骑行服-黑色 (S)](https://www.decathlon.com.cn/zh/p/road-cycling-jersey-racer-cofidis/_/R-p-305471) ¥239.9（迪卡侬）
 - [VAN RYSEL Training 打底衣 (S)](https://www.decathlon.com.cn/zh/p/base-layer-training/_/R-p-329813) ¥99.9 + ¥59.9（迪卡侬，促销回购）
 - [VAN RYSEL Essential 骑行打底衣 (S)](https://www.decathlon.com/collections/mens-base-layers/products/mens-cycling-short-sleeved-base-layer-100) ¥29.9（迪卡侬）
 - [BTWIN 100 骑行雨裤 (S)](https://www.decathlon.com.cn/zh/p/100-city-cycling-rain-overtrousers-black/_/R-p-169380) ¥99.9（迪卡侬）
+- 杂牌心率带胸带 ¥17.75（拼多多）
 
 ## 工具
 
-> ¥199.12
+> ¥310.02
 
 - [巨木 无线数显充气泵 (JM-88172)](https://item.jd.com/100020481122.html) ¥0（工会）
+- [GIANT AIR3 打气筒](https://item.jd.com/10085890089054.html) ¥109（淘宝）
 - [RIVERSIDE 法式/美式气嘴连接软管](https://www.decathlon.com.cn/zh/p/connection-hose-and-valve-adaptors/_/R-p-306762) ¥12.9（迪卡侬）
 - [CYLION 清洗剂 + CYLION 链条油 + 洗链器](https://item.jd.com/41834882688.html) ¥26（京东）
 - [CYLION 润滑脂 + CYLION 链条油](https://item.jd.com/100026149012.html) ¥19.8（拼多多）
@@ -121,4 +123,5 @@
 - [DELI 内六角扳手球头 9 件套 (DL232109H)](https://item.jd.com/100013546001.html) ¥9.81（拼多多）
 - [DELI 尖嘴钳 5 寸 (DL20026)](https://item.jd.com/5821581.html) ¥6.63（拼多多）
 - [DELI 活动扳手 8 寸 (DL008A)](https://item.jd.com/7434946.html) ¥13.52（拼多多）
+- [公牛 电工胶带（9 米）](https://item.jd.com/5464826.html) ¥1.9（拼多多）
 - 杂牌扎带 1.8mm 20cm (x250) ¥3.71（拼多多）
