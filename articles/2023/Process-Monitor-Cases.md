@@ -1,6 +1,6 @@
 # Process Monitor 故事汇
 
-> 2023/10/29
+> 2023/10/29 -> 2024/8/11
 > 
 > 汇总借助 Process Monitor 分析的典型案例（持续更新中）
 
@@ -84,6 +84,22 @@ DEL [/P] [/F] [/S] [/Q] [/A[[:]attributes]] names
 ![IP-Guard](Process-Monitor-Cases/IP-Guard.png)
 
 最后，通过停用上述安全软件，终于恢复正常了。
+
+## 注册表跟踪
+
+监控特定注册表项目、目录，定位访问的进程。
+
+### 案例：注册表被篡改
+
+**现象**
+
+默认浏览器总是被修改为 Edge 浏览器。
+
+**分析**
+
+借助 Process Monitor 监控 `HKCU\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice` 注册表目录，发现是 `msedge.exe` 修改的默认浏览器选项：
+
+![Regedit-Events](Process-Monitor-Cases/Regedit-Events.png)
 
 ## 进程跟踪
 
