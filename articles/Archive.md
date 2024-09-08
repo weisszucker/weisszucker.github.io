@@ -157,7 +157,6 @@
 #### 2019
 
 - [泰国假日 2](2019/Holiday-in-Thailand-2.md)
-- [泰国出行准备](2019/Preparation-to-Thailand.md)
 
 #### 2018
 
@@ -189,6 +188,7 @@
 
 - [搜集的哲言](misc/Quotes.md) 👍
 - [读过的书](misc/Books-Read.md)
-- [我的自行车](misc/Bikes.md)
+- [出行准备清单](misc/Trip-Preparation-Checklist.md)
+- [自行车](misc/Bikes.md)
 - [装机必备](misc/Softwares-Must-Have.md)
 - [二维码生成器](misc/QR-Code-Generator.md)

@@ -8,6 +8,23 @@
 
 > 1RMB（人民币） = 5B（泰铢）
 
+## Tips
+
+- 机票体验：海航直飞 > 国航直飞 > 深航转机
+- 酒店价格：[携程](https://hotels.ctrip.com/international/) < [Agoda](https://www.agoda.com/) < [Booking](https://www.booking.com/)（携程一般有“中宾”优惠）
+- 10000 泰铢或等额货币/人
+  - 建议多带现金去当地换，因为换回来比较麻烦
+  - 海关快速通道需要 200 泰铢/人
+  - 汇率：钱庄 > [工行](http://www.icbc.com.cn/icbc/%e9%87%91%e8%9e%8d%e4%bf%a1%e6%81%af/%e5%a4%96%e6%b1%87%e7%89%8c%e4%bb%b7/%e4%ba%ba%e6%b0%91%e5%b8%81%e5%a4%96%e6%b1%87%e7%89%8c%e4%bb%b7/) > [中行](http://www.boc.cn/sourcedb/whpj/) > 机场
+- 落地签申请表
+  - 现场人多，建议提前填好
+  - [英文](https://www.immigration.go.th/download/1486544488315.pdf) / [中文](https://www.immigration.go.th/download/1486544706654.pdf)
+- 2 寸照片（亲测 白底/蓝底 都可以）
+- 电话卡（淘宝便宜一半）
+- 出入境卡（飞机上发）
+  - 有的酒店入住需要复印出境卡
+  - 出境卡需要保管好
+
 ## 人再囧途之泰囧
 
 和许多去泰国 **旅游** 的人 **不一样**，我们此行的主要目的是去体验 **当地人** 的 **日常生活**。在曼谷湿热的空气和芭提雅带着咸味的海风中，我们感受到了暹罗（泰国旧称）独特的魅力。
