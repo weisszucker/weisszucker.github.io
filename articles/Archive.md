@@ -3,6 +3,10 @@
 
 ## 代码 | Coding
 
+#### 2025
+
+- [逆向小故事之“破解 OBS”](2025/Reverse-Story-OBS.md)
+
 #### 2024
 
 - [单向数据同步之“推拉结合”](2024/Directional-Data-Sync-Push-and-Pull.md)
