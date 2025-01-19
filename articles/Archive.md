@@ -150,6 +150,7 @@
 
 #### 2024
 
+- [一则“让你满意”的故事](2024/Story-of-Satisfaction.md)
 - [公路车骑行独库公路](2024/Duku-Ride.md)
 - [泰国假日 3](2024/Holiday-in-Thailand-3.md)
 
@@ -191,9 +192,9 @@
 
 ## 其他 | Miscellaneous
 
-- [搜集的哲言](misc/Quotes.md) 👍
+- [搜集的哲言](misc/Quotes.md)
 - [读过的书](misc/Books-Read.md)
 - [出行准备清单](misc/Trip-Preparation-Checklist.md)
-- [自行车](misc/Bikes.md)
 - [装机必备](misc/Softwares-Must-Have.md)
+- [自行车](misc/Bikes.md)
 - [二维码生成器](misc/QR-Code-Generator.md)

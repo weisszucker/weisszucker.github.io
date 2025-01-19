@@ -2,6 +2,11 @@
 
 > Reading makes me feel good.
 
+## 哲学/心理学
+
+- Why Do I Do That?: Psychological Defense Mechanisms and the Hidden Ways They Shape Our Lives（中文版）- 2025
+- The 7 Habits of Highly Effective People（中文版）- 2023
+
 ## 语言
 
 - The C++ Programming Language, 3rd Edition（中文版）- 2015/2016
