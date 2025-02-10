@@ -1,10 +1,4 @@
-﻿[not-print]
-
-[float-right]
-
-[EN](CV-en.md) | 中文
-
-[print-only]
+﻿[print-only]
 
 <p id="cvQrCodeSec" style="position: fixed; width: 18%; height: 18%; top: 15px; right: 30px;"></p>
 
