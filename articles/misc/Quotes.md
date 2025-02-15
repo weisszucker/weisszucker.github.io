@@ -138,6 +138,7 @@
 - 谁都不是一座孤岛，自成一体。——约翰·堂恩
 - 我死后，请把我的心脏带回祖国，我要长眠于祖国地下。——肖邦
 - 不要问国家能为你做什么，而要问你能为国家做什么。——肯尼迪
+- If I do a job in 30 minutes, it’s because I spent 10 years learning how to do that in 30 minutes. You owe me for the years, not the minutes. —— davy. (@davygreenberg)
 
 ## 编程
 

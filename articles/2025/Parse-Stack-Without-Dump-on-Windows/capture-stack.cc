@@ -33,14 +33,28 @@ BOOL CALLBACK EnumModulesCallback(PCWSTR name,
   return TRUE;
 }
 
-void WriteStack(const wchar_t* filename, CONTEXT* context_record) {
+void WriteStack(const wchar_t* filename,
+                CONTEXT* context_record,
+                HANDLE thread_handle) {
+  const HANDLE process_handle = ::GetCurrentProcess();
+  {
+    std::lock_guard<std::mutex> lg{g_dbghelp_lock};
+    if (!::SymInitialize(process_handle, NULL, TRUE)) {
+      std::cerr << "SymInitialize failed: " << ::GetLastError() << std::endl;
+      return;
+    }
+  }
+
   Modules modules;
   {
     std::lock_guard<std::mutex> lg{g_dbghelp_lock};
-    if (!::EnumerateLoadedModulesW64(::GetCurrentProcess(), EnumModulesCallback,
+    if (!::EnumerateLoadedModulesW64(process_handle, EnumModulesCallback,
                                      &modules)) {
       std::cerr << "EnumerateLoadedModulesW64 failed: " << ::GetLastError()
                 << std::endl;
+      if (!::SymCleanup(process_handle)) {
+        std::cerr << "SymCleanup failed: " << ::GetLastError() << std::endl;
+      }
       return;
     }
   }
@@ -75,10 +89,10 @@ void WriteStack(const wchar_t* filename, CONTEXT* context_record) {
   while (true) {
     {
       std::lock_guard<std::mutex> lg{g_dbghelp_lock};
-      if (!::StackWalk64(machine_type, ::GetCurrentProcess(),
-                         ::GetCurrentThread(), &stack_frame, context_record,
-                         NULL, &::SymFunctionTableAccess64,
-                         &::SymGetModuleBase64, NULL)) {
+      if (!::StackWalk64(machine_type, process_handle, thread_handle,
+                         &stack_frame, context_record, NULL,
+                         &::SymFunctionTableAccess64, &::SymGetModuleBase64,
+                         NULL)) {
         break;
       }
     }
@@ -96,6 +110,14 @@ void WriteStack(const wchar_t* filename, CONTEXT* context_record) {
     ++count;
   }
   std::wcout << L"Wrote " << count << L" frames: " << filename << std::endl;
+
+  {
+    std::lock_guard<std::mutex> lg{g_dbghelp_lock};
+    if (!::SymCleanup(process_handle)) {
+      std::cerr << "SymCleanup failed: " << ::GetLastError() << std::endl;
+      return;
+    }
+  }
 }
 
 void TakeJankSnapshot(DWORD thread_id) {
@@ -126,7 +148,7 @@ void TakeJankSnapshot(DWORD thread_id) {
     return;
   }
 
-  WriteStack(kJankStackFileName, &context);
+  WriteStack(kJankStackFileName, &context, thread_handle);
 
   if (::ResumeThread(thread_handle) == static_cast<DWORD>(-1)) {
     std::cerr << "ResumeThread failed: " << ::GetLastError() << std::endl;
@@ -139,7 +161,7 @@ LONG WINAPI HandleExceptionFilter(EXCEPTION_POINTERS* exception_pointers) {
   memcpy(&context, exception_pointers->ContextRecord, sizeof(context));
   context.ContextFlags = CONTEXT_INTEGER | CONTEXT_CONTROL;
 
-  WriteStack(kCrashStackFileName, &context);
+  WriteStack(kCrashStackFileName, &context, ::GetCurrentThread());
 
   if (g_previous_filter) {
     return g_previous_filter(exception_pointers);
@@ -156,12 +178,6 @@ void SimulateCrash() {
 }
 
 int main() {
-  const HANDLE current_process = ::GetCurrentProcess();
-  if (!::SymInitialize(current_process, NULL, TRUE)) {
-    std::cerr << "SymInitialize failed: " << ::GetLastError() << std::endl;
-    return 1;
-  }
-
   g_previous_filter = SetUnhandledExceptionFilter(&HandleExceptionFilter);
 
   std::thread watchdog([thread_id = ::GetCurrentThreadId()] {
@@ -173,6 +189,5 @@ int main() {
 
   SimulateCrash();
 
-  ::SymCleanup(current_process);
   return 0;
 }
