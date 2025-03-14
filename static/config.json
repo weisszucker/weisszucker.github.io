@@ -1,15 +1,14 @@
 ﻿{
-  "name": "BOT Man JL",
+  "name": "Weiss Zucker",
   "contact": {
-    "name": "BOT Man | John Lee",
+    "name": "Weiss Zucker | Pan Zhihui ",
     "github": {
-      "text": "BOT-Man-JL @ GitHub",
-      "link": "https://github.com/BOT-Man-JL",
+      "text": "weisszucker @ GitHub",
+      "link": "https://github.com/weisszucker",
       "img": "/static/github.svg"
     },
     "email": {
-      "text": "g123nn@hotmail.com",
-      "link": "mailto:g123nn@hotmail.com",
+      "text": "weisszucker@outlook.com",
       "img": "/static/email.svg"
     }
   },
@@ -18,7 +17,7 @@
     "📝": "/articles/"
   },
   "footer": [
-    "<a href='https://github.com/BOT-Man-JL/BOT-Man-JL.github.io'>About BOT Mark and BOT Frame</a>",
-    "&copy; BOT Man, 2023"
+    "<a href='https://github.com/weisszucker/weisszucker.github.io'>About Weiss Zucker</a>",
+    "&copy; Weiss Zucker, 2025"
   ]
 }
